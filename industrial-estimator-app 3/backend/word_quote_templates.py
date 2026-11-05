@@ -539,16 +539,27 @@ def bootstrap_quote73_defaults():
                 # Update an untouched stock v1 Word fallback when the shipped
                 # placeholder contract evolves. Do not touch admin-replaced layouts.
                 asset=asset_for(db,old)
-                if old.is_builtin and old.version==1 and asset and asset.original_name==docx_path.name:
-                    current=(PRIVATE_DIR/asset.stored_name).read_bytes()
-                    if hashlib.sha256(current).hexdigest()!=hashlib.sha256(raw).hexdigest():
-                        db.add(WordTemplateAssetRevision(template_id=old.id,version=old.version,
-                            stored_name=asset.stored_name,checksum=asset.checksum))
-                        stored='default_quote73_v07_'+workflow+'.docx'
-                        (PRIVATE_DIR/stored).write_bytes(raw)
-                        asset.stored_name=stored;asset.checksum=hashlib.sha256(raw).hexdigest()
-                        asset.fields_json=json.dumps(fields)
-                        old.version+=1;old.updated_at=utcnow()
+                if old.is_builtin and asset and asset.original_name==docx_path.name:
+                    # Neon persists template metadata, but Render's runtime files
+                    # can disappear after a deploy or restart. Restore only the
+                    # bundled, unmodified template with a matching checksum.
+                    bundled_checksum=hashlib.sha256(raw).hexdigest()
+                    stored_path=PRIVATE_DIR/asset.stored_name
+                    if not stored_path.is_file() and asset.checksum==bundled_checksum:
+                        stored_path.write_bytes(raw)
+                    if old.version==1:
+                        # A missing old stock file cannot be archived; use the
+                        # bundled template without creating a bogus revision.
+                        current=stored_path.read_bytes() if stored_path.is_file() else None
+                        if current is None or hashlib.sha256(current).hexdigest()!=bundled_checksum:
+                            if current is not None:
+                                db.add(WordTemplateAssetRevision(template_id=old.id,version=old.version,
+                                    stored_name=asset.stored_name,checksum=asset.checksum))
+                            stored='default_quote73_v07_'+workflow+'.docx'
+                            (PRIVATE_DIR/stored).write_bytes(raw)
+                            asset.stored_name=stored;asset.checksum=bundled_checksum
+                            asset.fields_json=json.dumps(fields)
+                            old.version+=1;old.updated_at=utcnow()
                 continue  # Keep the admin-selected default unchanged.
             layout=next(dict(raw_layout) for (_c,_n,wf,raw_layout) in DEFAULTS if wf==workflow)
             layout['title']='STANDARD QUOTATION'
