@@ -1733,4 +1733,4 @@ def bootstrap_reference_catalog() -> None:
     load_defaults(demo=False)
 
 
-app.add_event_handler('startup', bootstrap_reference_catalog)
+bootstrap_reference_catalog()
