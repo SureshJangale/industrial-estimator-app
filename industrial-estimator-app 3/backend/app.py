@@ -33,6 +33,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, create_engine, select, inspect
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker, Session
 from sqlalchemy.pool import StaticPool
+from sqlalchemy.exc import IntegrityError
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_URL = os.getenv('DATABASE_URL') or f"sqlite:///{(ROOT / 'runtime' / 'estimator.db').as_posix()}"
@@ -286,6 +287,50 @@ def hashed_password(password: str) -> str:
     rounds = 390000
     derived = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, rounds)
     return f'pbkdf2_sha256${rounds}${base64.urlsafe_b64encode(salt).decode()}${base64.urlsafe_b64encode(derived).decode()}'
+
+
+def bootstrap_admin_from_env() -> None:
+    """Idempotent, opt-in production admin creation.
+
+    Runs during application startup after tables and account migrations exist.
+    Never modifies an existing user's role, password, status or recovery codes.
+    Removing the bootstrap environment variables after first use is safe.
+    """
+    username = os.getenv('ADMIN_USERNAME', '').strip().lower()
+    password = os.getenv('ADMIN_PASSWORD', '')
+    if not username and not password:
+        return
+    if not username or not password:
+        raise RuntimeError('Admin bootstrap: set both ADMIN_USERNAME and ADMIN_PASSWORD, or remove both.')
+    if not re.fullmatch(r'[a-z0-9._-]{3,50}', username):
+        raise RuntimeError('Admin bootstrap: ADMIN_USERNAME must be 3-50 letters, numbers, dots, hyphens or underscores.')
+
+    with SessionLocal() as db:
+        existing = db.scalar(select(User).where(User.username == username))
+        if existing is not None:
+            if existing.role != 'admin' or not existing.active:
+                raise RuntimeError('Admin bootstrap: username is already assigned to a non-active-admin account; not changing it.')
+            print(f'Admin bootstrap: {username} already exists; account and password unchanged.')
+            return
+
+        if len(password) < 12:
+            raise RuntimeError('Admin bootstrap: ADMIN_PASSWORD must contain at least 12 characters.')
+        db.add(User(username=username, display_name='Administrator',
+                    password_hash=hashed_password(password), role='admin', active=True))
+        try:
+            db.commit()
+        except IntegrityError:
+            # In case two app instances start at once, re-check instead of overwriting.
+            db.rollback()
+            existing = db.scalar(select(User).where(User.username == username))
+            if existing is None or existing.role != 'admin' or not existing.active:
+                raise
+            print(f'Admin bootstrap: {username} already created by another instance; unchanged.')
+            return
+    print(f'Admin bootstrap: administrator {username} created.')
+
+
+bootstrap_admin_from_env()
 
 
 def valid_password(password: str, stored: str) -> bool:
