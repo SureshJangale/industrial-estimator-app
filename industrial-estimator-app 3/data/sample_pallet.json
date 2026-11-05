@@ -1,0 +1,141 @@
+{
+  "job_id": "PALLET-PROOF-001",
+  "config_id": "fabricated_pallet",
+  "config_version": "1.0.0",
+  "source_document": "Synthetic steel pallet example; no customer drawing included",
+  "fields": {
+    "length_mm": {
+      "value": 1200,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    },
+    "width_mm": {
+      "value": 600,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    },
+    "height_mm": {
+      "value": 800,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    },
+    "steel_grade": {
+      "value": null,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    },
+    "mesh_wire_diameter_mm": {
+      "value": null,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    },
+    "finish_colour": {
+      "value": null,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    },
+    "complete_drawing_set": {
+      "value": false,
+      "provenance": "SYNTHETIC_DEMO_UNVERIFIED",
+      "approved": false
+    }
+  },
+  "components": [
+    {
+      "sku": "SHS-40-40-3",
+      "qty": 18,
+      "unit": "m",
+      "waste_pct": 8,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    },
+    {
+      "sku": "FLAT-40-8",
+      "qty": 5,
+      "unit": "m",
+      "waste_pct": 8,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    },
+    {
+      "sku": "ANGLE-40-40-5",
+      "qty": 8,
+      "unit": "m",
+      "waste_pct": 8,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    },
+    {
+      "sku": "FLAT-25-3",
+      "qty": 12,
+      "unit": "m",
+      "waste_pct": 8,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    },
+    {
+      "sku": "MESH-25-25",
+      "qty": 3,
+      "unit": "m2",
+      "waste_pct": 10,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    },
+    {
+      "sku": "ANGLE-40-40-3",
+      "qty": 9,
+      "unit": "m",
+      "waste_pct": 8,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    },
+    {
+      "sku": "SHEET-1-6",
+      "qty": 0.6,
+      "unit": "m2",
+      "waste_pct": 10,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustrative demo quantity; not taken from an approved cutting list"
+    }
+  ],
+  "operations": [
+    {
+      "code": "cut",
+      "description": "Cut and prepare stock",
+      "hours": 2,
+      "rate_inr_hour": 400,
+      "status": "DEMO_ASSUMED"
+    },
+    {
+      "code": "weld",
+      "description": "Full-joint welding and fit-up",
+      "hours": 6,
+      "rate_inr_hour": 450,
+      "status": "DEMO_ASSUMED"
+    },
+    {
+      "code": "finish",
+      "description": "Grinding and paint preparation/finish",
+      "hours": 4,
+      "rate_inr_hour": 400,
+      "status": "DEMO_ASSUMED"
+    },
+    {
+      "code": "mark",
+      "description": "Stencilling and serial marking",
+      "hours": 1,
+      "rate_inr_hour": 300,
+      "status": "DEMO_ASSUMED"
+    }
+  ],
+  "commercial_policy": {
+    "overhead_pct": 8,
+    "contingency_pct": 5,
+    "target_margin_pct": 20
+  },
+  "warnings": [
+    "Synthetic demo data; original proprietary drawing is not included",
+    "No approved cutting list, supplier prices, or engineering sign-offs",
+    "All values remain provisional"
+  ]
+}

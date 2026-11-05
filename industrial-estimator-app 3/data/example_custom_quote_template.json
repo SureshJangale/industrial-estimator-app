@@ -1,0 +1,37 @@
+{
+  "code": "custom_fabrication",
+  "name": "Fabrication techno-commercial",
+  "workflow": "equipment_supply",
+  "layout": {
+    "title": "TECHNICAL & COMMERCIAL OFFER",
+    "tagline": "Fabrication | Engineering | Installation",
+    "primary_color": "#17344C",
+    "accent_color": "#087E75",
+    "intro": "We submit our offer for {project} to {customer}.",
+    "closing": "Please contact us for any clarification.",
+    "footer": "Controlled document | {quote_number}",
+    "sections": [
+      {
+        "key": "technical",
+        "title": "TECHNICAL SPECIFICATIONS",
+        "enabled": true
+      },
+      {
+        "key": "pricing",
+        "title": "PRICE SCHEDULE",
+        "enabled": true
+      },
+      {
+        "key": "certifications",
+        "title": "CERTIFICATION AND INSPECTION",
+        "enabled": true
+      },
+      {
+        "key": "terms",
+        "title": "COMMERCIAL TERMS",
+        "enabled": true
+      }
+    ],
+    "format_style": "classic_equipment"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "job_id": "CONVEYOR-PROOF-001",
+  "config_id": "belt_conveyor",
+  "config_version": "1.0.0",
+  "source_document": "No source drawing - entirely synthetic",
+  "fields": {
+    "center_distance_m": {
+      "value": 6,
+      "provenance": "DEMO_ASSUMED",
+      "approved": false
+    },
+    "belt_width_mm": {
+      "value": 600,
+      "provenance": "DEMO_ASSUMED",
+      "approved": false
+    },
+    "throughput_tph": {
+      "value": null,
+      "provenance": "not_calculated",
+      "approved": false
+    },
+    "conveyed_material": {
+      "value": null,
+      "provenance": "not_specified",
+      "approved": false
+    },
+    "inclination_deg": {
+      "value": 0,
+      "provenance": "DEMO_ASSUMED",
+      "approved": false
+    },
+    "operating_duty": {
+      "value": null,
+      "provenance": "not_specified",
+      "approved": false
+    },
+    "motor_selection_approved": {
+      "value": false,
+      "provenance": "design_not_performed",
+      "approved": false
+    }
+  },
+  "components": [
+    {
+      "sku": "CONV-FRAME",
+      "qty": 75,
+      "unit": "kg",
+      "waste_pct": 8,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustration only"
+    },
+    {
+      "sku": "CONV-BELT",
+      "qty": 8,
+      "unit": "m",
+      "waste_pct": 0,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustration only"
+    },
+    {
+      "sku": "CONV-IDLER",
+      "qty": 12,
+      "unit": "each",
+      "waste_pct": 0,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustration only"
+    },
+    {
+      "sku": "CONV-PULLEY",
+      "qty": 2,
+      "unit": "each",
+      "waste_pct": 0,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Illustration only"
+    },
+    {
+      "sku": "CONV-GEARMOTOR",
+      "qty": 1,
+      "unit": "each",
+      "waste_pct": 0,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Not engineered"
+    },
+    {
+      "sku": "CONV-CONTROLS",
+      "qty": 1,
+      "unit": "each",
+      "waste_pct": 0,
+      "quantity_status": "DEMO_ASSUMED",
+      "source": "Not engineered"
+    }
+  ],
+  "operations": [
+    {
+      "code": "cut",
+      "description": "Frame cutting and prep",
+      "hours": 5,
+      "rate_inr_hour": 400,
+      "status": "DEMO_ASSUMED"
+    },
+    {
+      "code": "weld",
+      "description": "Weld frame",
+      "hours": 9,
+      "rate_inr_hour": 450,
+      "status": "DEMO_ASSUMED"
+    },
+    {
+      "code": "assemble",
+      "description": "Assemble conveyor",
+      "hours": 8,
+      "rate_inr_hour": 450,
+      "status": "DEMO_ASSUMED"
+    },
+    {
+      "code": "test",
+      "description": "Electrical and mechanical tests",
+      "hours": 3,
+      "rate_inr_hour": 500,
+      "status": "DEMO_ASSUMED"
+    }
+  ],
+  "commercial_policy": {
+    "overhead_pct": 8,
+    "contingency_pct": 5,
+    "target_margin_pct": 20
+  },
+  "warnings": [
+    "No conveyor design calculated",
+    "No actual conveyor drawing or engineer-approved BOM",
+    "All quantities and unit prices are provisional demo figures"
+  ]
+}

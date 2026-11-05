@@ -1,0 +1,192 @@
+{
+  "config_version": "1.0.0",
+  "product_type": "fabricated_pallet",
+  "label": "Fabricated steel pallet/cage",
+  "product_family": "fabricated_assembly",
+  "accepted_input_formats": [
+    "pdf",
+    "docx",
+    "dxf",
+    "xlsx"
+  ],
+  "required_fields": [
+    {
+      "key": "length_mm",
+      "unit": "mm",
+      "firm_required": true,
+      "aliases": [
+        "Overall Length",
+        "Length"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "width_mm",
+      "unit": "mm",
+      "firm_required": true,
+      "aliases": [
+        "Overall Width",
+        "Width"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "height_mm",
+      "unit": "mm",
+      "firm_required": true,
+      "aliases": [
+        "Overall Height",
+        "Height"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "steel_grade",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "mesh_wire_diameter_mm",
+      "unit": "mm",
+      "firm_required": true,
+      "extraction_type": "number"
+    },
+    {
+      "key": "finish_colour",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "complete_drawing_set",
+      "unit": null,
+      "firm_required": true
+    }
+  ],
+  "allowed_components": [
+    "SHS-40-40-3",
+    "FLAT-40-8",
+    "ANGLE-40-40-5",
+    "FLAT-25-3",
+    "MESH-25-25",
+    "ANGLE-40-40-3",
+    "SHEET-1-6"
+  ],
+  "allowed_quantity_uoms": [
+    "m",
+    "m2",
+    "kg",
+    "each"
+  ],
+  "required_operations": [
+    "cut",
+    "weld",
+    "finish",
+    "mark"
+  ],
+  "quotation_sections": [
+    "scope",
+    "technical_specification",
+    "material_schedule",
+    "finishing",
+    "commercial_terms",
+    "exclusions"
+  ],
+  "approval_roles": [
+    "estimator",
+    "engineering_reviewer",
+    "commercial_approver"
+  ],
+  "engineer_approval_required": true,
+  "commercial_approval_required": true,
+  "notes": "Generic fabricated pallet demo; all real engineering evidence must be uploaded and approved separately.",
+  "material_matchers": [
+    {
+      "sku": "SHS-40-40-3",
+      "aliases": [
+        "SQ TUBE 40X40X3MM",
+        "SQUARE TUBE 40X40X3",
+        "SQ TUBE 40 X 40 X 3 MM"
+      ]
+    },
+    {
+      "sku": "FLAT-40-8",
+      "aliases": [
+        "MS FLAT 40X8",
+        "MS FLAT 40 X 8"
+      ]
+    },
+    {
+      "sku": "ANGLE-40-40-5",
+      "aliases": [
+        "MS ANGLE 40X40X5",
+        "MS ANGLE 40 X 40 X 5"
+      ]
+    },
+    {
+      "sku": "FLAT-25-3",
+      "aliases": [
+        "MS FLAT 25X3",
+        "MS FLAT 25 X 3"
+      ]
+    },
+    {
+      "sku": "MESH-25-25",
+      "aliases": [
+        "MS MESH 1 INCH X 1 INCH",
+        "MS MESH 1 inch x 1 inch"
+      ]
+    },
+    {
+      "sku": "ANGLE-40-40-3",
+      "aliases": [
+        "MS ANGLE 40X40X3",
+        "MS ANGLE 40 X 40 X 3"
+      ]
+    },
+    {
+      "sku": "SHEET-1-6",
+      "aliases": [
+        "MS SHEET 1.6 MM",
+        "MS SHEET 1.6MM"
+      ]
+    }
+  ],
+  "specification_sections": [
+    {
+      "id": "general",
+      "title": "Technical specification",
+      "fields": [
+        {
+          "key": "length_mm",
+          "label": "Length Mm",
+          "unit": "mm"
+        },
+        {
+          "key": "width_mm",
+          "label": "Width Mm",
+          "unit": "mm"
+        },
+        {
+          "key": "height_mm",
+          "label": "Height Mm",
+          "unit": "mm"
+        },
+        {
+          "key": "steel_grade",
+          "label": "Steel Grade",
+          "unit": ""
+        },
+        {
+          "key": "mesh_wire_diameter_mm",
+          "label": "Mesh Wire Diameter Mm",
+          "unit": "mm"
+        },
+        {
+          "key": "finish_colour",
+          "label": "Finish Colour",
+          "unit": ""
+        }
+      ]
+    }
+  ]
+}

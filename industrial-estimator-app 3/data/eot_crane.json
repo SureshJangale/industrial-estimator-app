@@ -1,0 +1,186 @@
+{
+  "config_version": "1.0.0",
+  "product_type": "eot_crane",
+  "label": "Electric overhead travelling crane",
+  "product_family": "lifting_equipment",
+  "accepted_input_formats": [
+    "pdf",
+    "docx",
+    "dxf",
+    "dwg",
+    "xlsx"
+  ],
+  "required_fields": [
+    {
+      "key": "safe_working_load_t",
+      "unit": "t",
+      "firm_required": true,
+      "aliases": [
+        "CAPACITY",
+        "SWL",
+        "Safe Working Load",
+        "Main Hoist Capacity"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "rail_span_m",
+      "unit": "m",
+      "firm_required": true,
+      "aliases": [
+        "SPAN",
+        "Crane Span"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "lifting_height_m",
+      "unit": "m",
+      "firm_required": true,
+      "aliases": [
+        "LIFT",
+        "Lifting Height"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "crane_duty_class",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "headroom_mm",
+      "unit": "mm",
+      "firm_required": true,
+      "aliases": [
+        "MIN. HEADROOM",
+        "MIN .HEADROOM",
+        "MIN HEADROOM"
+      ],
+      "extraction_type": "number",
+      "label": "Minimum crane headroom"
+    },
+    {
+      "key": "hoist_speed_m_min",
+      "unit": "m/min",
+      "firm_required": true,
+      "aliases": [
+        "Hoisting Speed",
+        "Hoist Speed"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "power_supply",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "engineered_design_approved",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "hoist_headroom_mm",
+      "label": "Hoist headroom",
+      "unit": "mm",
+      "firm_required": false,
+      "aliases": [
+        "HEADROOM"
+      ],
+      "extraction_type": "number",
+      "exclude_prefixes": [
+        "MIN.",
+        "MIN"
+      ]
+    }
+  ],
+  "allowed_components": [],
+  "allowed_quantity_uoms": [
+    "m",
+    "m2",
+    "kg",
+    "each"
+  ],
+  "required_operations": [
+    "fabricate",
+    "assemble",
+    "test",
+    "commission"
+  ],
+  "quotation_sections": [
+    "scope",
+    "technical_specification",
+    "compliance_basis",
+    "commercial_terms",
+    "exclusions"
+  ],
+  "approval_roles": [
+    "estimator",
+    "engineering_reviewer",
+    "commercial_approver"
+  ],
+  "engineer_approval_required": true,
+  "commercial_approval_required": true,
+  "notes": "Schema demonstration only; no crane quantity or safety design rules included.",
+  "specification_sections": [
+    {
+      "id": "general",
+      "title": "General / dimensional requirements",
+      "fields": [
+        {
+          "key": "rail_span_m",
+          "label": "Span",
+          "unit": "m"
+        },
+        {
+          "key": "safe_working_load_t",
+          "label": "Main lifting capacity",
+          "unit": "t"
+        },
+        {
+          "key": "lifting_height_m",
+          "label": "Lift height",
+          "unit": "m"
+        },
+        {
+          "key": "crane_duty_class",
+          "label": "Duty classification",
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "id": "hoist",
+      "title": "Hoist / travel / control",
+      "fields": [
+        {
+          "key": "hoist_speed_m_min",
+          "label": "Hoisting speed",
+          "unit": "m/min"
+        },
+        {
+          "key": "power_supply",
+          "label": "Power supply",
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "id": "clearances",
+      "title": "Weights and clearances",
+      "fields": [
+        {
+          "key": "headroom_mm",
+          "label": "Headroom",
+          "unit": "mm"
+        },
+        {
+          "key": "hoist_headroom_mm",
+          "label": "Hoist headroom",
+          "unit": "mm"
+        }
+      ]
+    }
+  ]
+}

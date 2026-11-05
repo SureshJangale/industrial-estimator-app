@@ -1,0 +1,184 @@
+{
+  "price_book_version": "2026-10-29-research-benchmarks",
+  "captured_on": "2026-10-29",
+  "currency": "INR",
+  "prices": [
+    {
+      "sku": "SHS-40-40-3",
+      "description": "MS square tube 40x40x3 mm",
+      "rate": 65.0,
+      "price_uom": "kg",
+      "tax": "ex-GST",
+      "status": "PUBLIC_BENCHMARK",
+      "source": "Sree Dhanalakshmi Enterprises, Chennai, 40x40 mm pipes 1.6-4 mm",
+      "url": "https://www.sreedhanalakshmienterprises.in/today-fabrication-materials-price",
+      "notes": "Family listing; exact 3 mm grade/weight and actual availability to confirm."
+    },
+    {
+      "sku": "FLAT-40-8",
+      "description": "MS flat 40x8 mm",
+      "rate": 67.0,
+      "price_uom": "kg",
+      "tax": "unconfirmed",
+      "status": "RANGE_MIDPOINT",
+      "source": "Tata nexarc flat-price article, 8 mm flat range 60-75/kg",
+      "url": "https://blog.tatanexarc.com/da/ms-flat/",
+      "notes": "Midpoint-derived from broader 8 mm flat range, not an exact size quotation."
+    },
+    {
+      "sku": "ANGLE-40-40-5",
+      "description": "MS angle 40x40x5 mm",
+      "rate": 58.0,
+      "price_uom": "kg",
+      "tax": "ex-GST",
+      "status": "PUBLIC_BENCHMARK",
+      "source": "Sree Dhanalakshmi Enterprises, Chennai",
+      "url": "https://www.sreedhanalakshmienterprises.in/today-fabrication-materials-price",
+      "notes": "Listed size-specific Chennai indicative rate."
+    },
+    {
+      "sku": "FLAT-25-3",
+      "description": "MS flat 25x3 mm",
+      "rate": 51.85,
+      "price_uom": "kg",
+      "tax": "unconfirmed",
+      "status": "PUBLIC_BENCHMARK",
+      "source": "Seth Steels, Makild online listing",
+      "url": "https://makild.com/products/ms-flats/",
+      "notes": "Listed 51,850 INR per tonne; bulk context; taxes/stock to confirm."
+    },
+    {
+      "sku": "MESH-25-25",
+      "description": "MS welded mesh 1x1 inch (wire gauge unknown in drawing)",
+      "rate": 35.0,
+      "price_uom": "sqft",
+      "tax": "unconfirmed",
+      "status": "NON_MATCHED_SPEC_BENCHMARK",
+      "source": "Laktas Wire Mesh, Mumbai",
+      "url": "https://www.laktaswiremesh.com/ms-weld-mesh.html",
+      "notes": "35 INR/sqft listing; 25x25mm 3mm-wire sample, 1000 sqft MOQ; drawing does not specify wire diameter."
+    },
+    {
+      "sku": "ANGLE-40-40-3",
+      "description": "MS angle 40x40x3 mm",
+      "rate": 60.0,
+      "price_uom": "kg",
+      "tax": "unconfirmed",
+      "status": "PROXY_ESTIMATE",
+      "source": "Proxy informed by 40x40 angle market listings",
+      "url": "https://www.sreedhanalakshmienterprises.in/today-fabrication-materials-price",
+      "notes": "NOT exact 40x40x3 supplier price; replace with confirmed rate."
+    },
+    {
+      "sku": "SHEET-1-6",
+      "description": "MS sheet 1.6mm thickness",
+      "rate": 52.5,
+      "price_uom": "kg",
+      "tax": "unconfirmed",
+      "status": "PUBLIC_BENCHMARK",
+      "source": "S M Steel Pune supplier listing",
+      "url": "https://m-gke.imimg.com/city/pune/ms-sheet.html",
+      "notes": "1.6mm cold-rolled sheet listing; verify grade, finish and actual material."
+    },
+    {
+      "sku": "CONV-FRAME",
+      "description": "Conveyor frame structural steel (generic)",
+      "rate": 58.0,
+      "price_uom": "kg",
+      "tax": "ex-GST proxy",
+      "status": "PROXY_ESTIMATE",
+      "source": "Proxy from 40x40x5 MS angle listing",
+      "url": "https://www.sreedhanalakshmienterprises.in/today-fabrication-materials-price",
+      "notes": "Material family unspecified; fabricated demo only."
+    },
+    {
+      "sku": "CONV-BELT",
+      "description": "Conveyor belt (demo only)",
+      "rate": 850.0,
+      "price_uom": "m",
+      "tax": "not set",
+      "status": "DEMO_ASSUMPTION",
+      "source": "No validated supplier price",
+      "url": "",
+      "notes": "Illustrative price for workbook function demonstration."
+    },
+    {
+      "sku": "CONV-IDLER",
+      "description": "Conveyor idler/roller (demo only)",
+      "rate": 450.0,
+      "price_uom": "each",
+      "tax": "not set",
+      "status": "DEMO_ASSUMPTION",
+      "source": "No validated supplier price",
+      "url": "",
+      "notes": "Illustrative price; specifications must be engineered."
+    },
+    {
+      "sku": "CONV-PULLEY",
+      "description": "Conveyor drive/idler pulley (demo only)",
+      "rate": 4500.0,
+      "price_uom": "each",
+      "tax": "not set",
+      "status": "DEMO_ASSUMPTION",
+      "source": "No validated supplier price",
+      "url": "",
+      "notes": "Illustrative price; conveyor design not performed."
+    },
+    {
+      "sku": "CONV-GEARMOTOR",
+      "description": "Geared motor assembly (demo only)",
+      "rate": 18000.0,
+      "price_uom": "each",
+      "tax": "not set",
+      "status": "DEMO_ASSUMPTION",
+      "source": "No validated supplier price",
+      "url": "",
+      "notes": "No motor sizing performed."
+    },
+    {
+      "sku": "CONV-CONTROLS",
+      "description": "Control panel assembly (demo only)",
+      "rate": 9000.0,
+      "price_uom": "each",
+      "tax": "not set",
+      "status": "DEMO_ASSUMPTION",
+      "source": "No validated supplier price",
+      "url": "",
+      "notes": "Not a validated panel specification."
+    }
+  ],
+  "profiles": {
+    "SHS-40-40-3": {
+      "kind": "shs",
+      "width_mm": 40,
+      "height_mm": 40,
+      "thickness_mm": 3
+    },
+    "FLAT-40-8": {
+      "kind": "flat",
+      "width_mm": 40,
+      "thickness_mm": 8
+    },
+    "ANGLE-40-40-5": {
+      "kind": "angle",
+      "a_mm": 40,
+      "b_mm": 40,
+      "thickness_mm": 5
+    },
+    "FLAT-25-3": {
+      "kind": "flat",
+      "width_mm": 25,
+      "thickness_mm": 3
+    },
+    "ANGLE-40-40-3": {
+      "kind": "angle",
+      "a_mm": 40,
+      "b_mm": 40,
+      "thickness_mm": 3
+    },
+    "SHEET-1-6": {
+      "kind": "sheet",
+      "thickness_mm": 1.6
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "config_version": "1.0.0",
+  "product_type": "belt_conveyor",
+  "label": "Belt conveyor system",
+  "product_family": "material_handling_equipment",
+  "accepted_input_formats": [
+    "pdf",
+    "docx",
+    "dxf",
+    "xlsx"
+  ],
+  "required_fields": [
+    {
+      "key": "center_distance_m",
+      "unit": "m",
+      "firm_required": true,
+      "aliases": [
+        "Centre Distance",
+        "Center Distance"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "belt_width_mm",
+      "unit": "mm",
+      "firm_required": true,
+      "aliases": [
+        "Belt Width"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "throughput_tph",
+      "unit": "t/h",
+      "firm_required": true,
+      "aliases": [
+        "Throughput",
+        "Capacity"
+      ],
+      "extraction_type": "number"
+    },
+    {
+      "key": "conveyed_material",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "inclination_deg",
+      "unit": "deg",
+      "firm_required": true,
+      "extraction_type": "number"
+    },
+    {
+      "key": "operating_duty",
+      "unit": null,
+      "firm_required": true
+    },
+    {
+      "key": "motor_selection_approved",
+      "unit": null,
+      "firm_required": true
+    }
+  ],
+  "allowed_components": [
+    "CONV-FRAME",
+    "CONV-BELT",
+    "CONV-IDLER",
+    "CONV-PULLEY",
+    "CONV-GEARMOTOR",
+    "CONV-CONTROLS"
+  ],
+  "allowed_quantity_uoms": [
+    "m",
+    "m2",
+    "kg",
+    "each"
+  ],
+  "required_operations": [
+    "cut",
+    "weld",
+    "assemble",
+    "test"
+  ],
+  "quotation_sections": [
+    "scope",
+    "technical_specification",
+    "belt_drive_scope",
+    "commercial_terms",
+    "exclusions"
+  ],
+  "approval_roles": [
+    "estimator",
+    "engineering_reviewer",
+    "commercial_approver"
+  ],
+  "engineer_approval_required": true,
+  "commercial_approval_required": true,
+  "notes": "Synthetic conveyor configuration only; all design/BOM quantities require engineer review.",
+  "specification_sections": [
+    {
+      "id": "general",
+      "title": "Technical specification",
+      "fields": [
+        {
+          "key": "center_distance_m",
+          "label": "Center Distance M",
+          "unit": "m"
+        },
+        {
+          "key": "belt_width_mm",
+          "label": "Belt Width Mm",
+          "unit": "mm"
+        },
+        {
+          "key": "throughput_tph",
+          "label": "Throughput Tph",
+          "unit": "t/h"
+        },
+        {
+          "key": "conveyed_material",
+          "label": "Conveyed Material",
+          "unit": ""
+        },
+        {
+          "key": "inclination_deg",
+          "label": "Inclination Deg",
+          "unit": "deg"
+        },
+        {
+          "key": "operating_duty",
+          "label": "Operating Duty",
+          "unit": ""
+        }
+      ]
+    }
+  ]
+}
