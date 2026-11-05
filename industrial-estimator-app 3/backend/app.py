@@ -1718,3 +1718,19 @@ def favicon():
 
 # Register additive generic selling-price and source-conflict modules after base routes.
 from . import company_settings, commercial, templates, word_quote_templates, standard_quote  # noqa: E402,F401
+
+
+def bootstrap_reference_catalog() -> None:
+    """Provision missing built-in reference data on each app startup.
+
+    This reuses the application's existing seeder in non-demo mode. It creates
+    missing product families, non-approved example price-book entries, and
+    company defaults without resetting records already edited in the database.
+    Quotation template defaults are initialized by their own modules above.
+    Runs after all application models are imported, avoiding circular imports.
+    """
+    from .seed import load_defaults
+    load_defaults(demo=False)
+
+
+app.add_event_handler('startup', bootstrap_reference_catalog)
